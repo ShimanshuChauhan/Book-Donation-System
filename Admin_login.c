@@ -8,8 +8,12 @@ int admin()
     {
         return 1;
     }
-    else
+    else if (password == 1)
     {
         return 2;
+    }
+    else
+    {
+        return 3;
     }
 }

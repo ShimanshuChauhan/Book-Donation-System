@@ -3,9 +3,10 @@
 #include "welcome_screen.c"
 #include "Admin_login.c"
 #include "delay.c"
+#include "user_interface.c"
 int main()
 {
-int num_wel,num_ad,num_adwin;
+    int num_wel, num_ad, num_adwin, num_user;
 welcome:
     welcome();
     printf("Enter your choice here: ");
@@ -31,14 +32,20 @@ admin:
     {
         goto admin_win;
     }
+    else if (num_ad == 2)
+    {
+        printf("Closing");
+        delay();
+        goto welcome;
+    }
     else
     {
-        printf("Please enter the correct password \n \n");
+        printf("Enter the correct password or 1 to exit\n");
         goto admin;
     }
 admin_win:
-    num_adwin=admin_window();
-    if (num_adwin== 1)
+    num_adwin = admin_window();
+    if (num_adwin == 1)
     {
         printf("View available books");
     }
@@ -59,5 +66,24 @@ admin_win:
     }
 
 user:
-    printf("User");
+    num_user = user_interface();
+    if (num_user == 1)
+    {
+        printf("Donate books");
+    }
+    else if (num_user == 2)
+    {
+        printf("Borrow books");
+    }
+    else if (num_user == 3)
+    {
+        printf("Closing");
+        delay();
+        goto welcome;
+    }
+    else
+    {
+        printf("\nPlease enter a valid choice\n");
+        goto user;
+    }
 }
