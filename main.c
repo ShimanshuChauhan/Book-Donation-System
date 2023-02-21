@@ -61,7 +61,7 @@ admin_win:
     }
     else
     {
-        printf("Please select correctly");
+        printf("Please enter a valid option\n");
         goto admin_win;
     }
 
