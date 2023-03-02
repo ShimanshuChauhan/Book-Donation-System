@@ -15,7 +15,7 @@ welcome:
     {
         goto admin;
     }
-    else if (num_wel == 2)
+    else if (num_wel == 2) 
     {
         goto user;
     }
