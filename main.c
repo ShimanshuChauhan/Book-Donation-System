@@ -47,13 +47,25 @@ admin_win:
     num_adwin = admin_window();
     if (num_adwin == 1)
     {
-        printf("View available books");
+        printf("Search available books");
     }
     else if (num_adwin == 2)
     {
-        printf("Delete books");
+        printf("Delete Record");
     }
     else if (num_adwin == 3)
+    {
+        printf("Add User");
+    }
+    else if (num_adwin == 4)
+    {
+        printf("Update Record");
+    }
+    else if (num_adwin == 5)
+    {
+        printf("Display Record");
+    }
+    else if (num_adwin == 6)
     {
         printf("Closing");
         delay();
