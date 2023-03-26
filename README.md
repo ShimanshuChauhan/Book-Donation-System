@@ -1,11 +1,13 @@
 # Book Donation System
 
-> Made By: `Shimanshu Chauhan` and 'Aman Negi'
+> Made By: `Shimanshu Chauhan` 
 
-# To Develop on your system simply:
 
-``` cmd
-git clone https://github.com/shimanshuchauhan/book-donation-system.git
-cd Book-Donation-System
-gcc main.c -o output && output
+## To Run the application:
+```cmd
+sh run.sh
+cd release
+bds
 ```
+> The output file is generated in `/release/`
+

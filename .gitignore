@@ -1,2 +1,5 @@
 .vscode
-output.exe
+*.exe
+# BDS is our release application
+!bds.exe
+*.txt
