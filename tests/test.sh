@@ -1,1 +1,1 @@
-gcc test.c ../src/data/data.c -o test && test
+gcc test.c ../src/data/data.c -o test 

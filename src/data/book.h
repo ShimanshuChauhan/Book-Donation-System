@@ -3,6 +3,7 @@
 
 typedef struct
 {
+    int id;
     char name[256];
     char author[256];
     char donatedBy[100];

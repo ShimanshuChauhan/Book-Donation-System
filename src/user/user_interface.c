@@ -10,7 +10,7 @@ void userInterface(int showStarter)
         printSubHeading("WELCOME USER");
 
     printf("Please select from the following option\n");
-    printInfo("1.Donate books\n2.Borrow Available Books\n3.Close Application");
+    printInfo("1.Donate books\n2.Close Application");
     printf("\nEnter your choice here: ");
     char selection;
     scanf("%s", &selection);
@@ -25,12 +25,7 @@ void userInterface(int showStarter)
 
     else if (selection == '2')
     {
-        // Borrow Available Books
-    }
-    else if (selection == '3')
-    {
-        // Exit Application
-        exit(0);
+        return;
     }
     else
         userInterface(0);
