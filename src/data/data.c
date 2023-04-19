@@ -227,6 +227,7 @@ Book searchBook(int id)
 
 void updateBook(int id, char *name, char *author, char *donatedBy, char *phone, char *address)
 {
+
     FILE *input_file = fopen("books.txt", "r");
     if (input_file == NULL)
     {
@@ -251,7 +252,7 @@ void updateBook(int id, char *name, char *author, char *donatedBy, char *phone, 
         int book_id = atoi(id_str);
         if (book_id == id)
         {
-            fprintf(temp_file, "%d\t%s\t%s\t%s\t%s\t%s\n", id, name, author, donatedBy, phone, address);
+            fprintf(temp_file, "%d\t%s\t%s\t%s\t%s\t%s", id, name, author, donatedBy, phone, address);
         }
         else
         {

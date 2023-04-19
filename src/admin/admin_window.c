@@ -2,6 +2,8 @@
 #include "../data/data.h"
 #include "./search_window.c"
 #include "./delete_window.c"
+#include "./update_window.c"
+
 
 void adminWindow(int showStarter)
 {
@@ -10,7 +12,7 @@ void adminWindow(int showStarter)
         printSubHeading("ADMIN WINDOW");
 
     printf("\nPlease select the task you want to perform: \n");
-    printInfo("1.View available books\n2.Delete Books\n3.Search Book\n4.Go Back\n");
+    printInfo("1.View available books\n2.Delete Books\n3.Search Book\n4.Update Book\n5.Go Back\n");
     printf("Enter your choice here: ");
     scanf("%s", &input);
     if (input == '1')
@@ -31,6 +33,10 @@ void adminWindow(int showStarter)
     }
     else if (input == '4')
     {
+        updateWindow(1);
+        adminWindow(0);
+    }
+    else if(input =='5'){
         return;
     }
     else
