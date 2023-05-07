@@ -9,7 +9,7 @@ int donateBooks()
     char username[100], address[100], phone[12];
     printSubHeading("Donate Book");
     printf("Let's get started by filling in some details about you:\n");
-    fflush(stdin);
+    fflush(stdin); 
 
     printf("Your name: ");
     fgets(username, 100, stdin);

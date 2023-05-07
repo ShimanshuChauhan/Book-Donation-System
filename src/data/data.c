@@ -45,7 +45,7 @@ int addBook(char *name, char *author, char *donatedBy, char *phone, char *addres
     }
 
     // write each book to file as text
-    int i;
+
     fprintf(fp, "%s\t%s\t%s\t%s\t%s\t%s\n", id, name, author, donatedBy, phone, address);
     writeCounter(counter + 1);
 
@@ -94,7 +94,7 @@ Book *getBooks()
         char *phone = strtok(NULL, "\t");
         char *address = strtok(NULL, "\n");
 
-        if (name == NULL || author == NULL)
+        if (counter == NULL)
         {
             printf("Error reading book data!");
             return NULL;
@@ -198,12 +198,12 @@ Book searchBook(int id)
     if (input_file == NULL)
     {
         perror("Failed to open input file");
-        Book not_found = {0}; // return a zeroed-out Book struct
+        Book not_found = {-1}; // return a zeroed-out Book struct
         return not_found;
     }
 
     char line[MAX_LINE_LENGTH];
-    Book found_book = {-1}; // initialize to all zeros
+    Book found_book = {0}; // initialize to all zeros
     while (fgets(line, MAX_LINE_LENGTH, input_file) != NULL)
     {
         char *id_str = strtok(line, "\t");
@@ -291,8 +291,8 @@ Book searchBookByName(char *name)
         return empty_book;
     }
 
-    char line[1024];
-    while (fgets(line, 1024, input_file))
+    char line[MAX_LINE_LENGTH];
+    while (fgets(line, MAX_LINE_LENGTH, input_file)!=NULL)
     {
         Book book = getBookFromLine(line);
         if (strcmp(book.name, name) == 0)

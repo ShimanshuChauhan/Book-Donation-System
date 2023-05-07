@@ -17,7 +17,7 @@ void adminLogin()
     if (!strcmp(password, "admin"))
         adminWindow(1);
     else if (!strcmp(password, "exit"))
-        exit(1);
+        return;
     else
     {
         printError("Invalid Password Try again!");
